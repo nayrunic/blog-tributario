@@ -18,8 +18,10 @@ export class App{
 
     public initialize(routes: Router[]){
 
-        const list = JSON.parse(process.env.WHITE_LIST || "");
-
+        const list: string[] = [];
+        const domain = process.env.WHITE_LIST;
+        if(domain) list.push(domain);
+    
         const corsOptions = {
             origin: function(origin:any, callback: any){
                 if( list.indexOf(origin) === -1) callback(new Error('Not allowed by CORS'));
