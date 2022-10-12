@@ -33,6 +33,9 @@ export class App{
 
         const staticPath = path.resolve(__dirname, "../public/uploads")
         this.app.use("/public/uploads", express.static(staticPath));
+        this.app.get("/", (req: Request, res: Response) => {
+            res.send("Hola")
+        })
 
         this.app.use(cors(corsOptions));
 
