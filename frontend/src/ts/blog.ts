@@ -28,7 +28,7 @@ const addArticle = (data: string) => {
             const imgName = line.split("[")[1].split("]")[0];
             articleField.innerHTML += `<img src="${CONFIG.public_path}/${imgName}" alt="${imgName}">`
         }else{
-            articleField.innerHTML += `<p${line}></p>`;
+            articleField.innerHTML += `<p>${line}</p>`;
         }
     })
 

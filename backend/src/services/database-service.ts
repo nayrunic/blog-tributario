@@ -7,7 +7,7 @@ export class Database{
     private db: any = null;
 
     public connect = async () => {
-        this.db = await mongoose.connect("mongodb://localhost/blog-tributario");
+        this.db = await mongoose.connect(process.env.MONGODB_URL ||  "");
         console.log("Connected to ",this.db.connection.db.databaseName)
     }
 
